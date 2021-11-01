@@ -2,16 +2,8 @@ radio.onReceivedNumber(function (receivedNumber) {
     duck_count = receivedNumber
 })
 input.onButtonPressed(Button.A, function () {
-    radio.sendString("duck")
-})
-radio.onReceivedString(function (receivedString) {
-    if (receivedString == "f") {
-        pins.servoWritePin(AnalogPin.P2, 180)
-        basic.showString("f")
-    } else if (receivedString == "duck") {
-        duck_count += 1
-        basic.showNumber(duck_count)
-    }
+    pins.servoWritePin(AnalogPin.P1, 0)
+    pins.servoWritePin(AnalogPin.P2, 0)
 })
 let duck_count = 0
 radio.setGroup(444)
